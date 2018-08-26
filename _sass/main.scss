@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../node_modules/bulma/bulma";
+// 2. Set your own initial variables
+// Update the blue shade, used for links
+$blue: #c3fcee;
+$light-gray: #f6f6f8;
+// Add pink and its invert
+$yellow: #f8be03;
+$black: #000;
+// Update the sans-serif font family
+$family-sans-serif: "Montserat", "Arial", sans-serif;
+$form-font-size: 1.4rem;
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $yellow;
+// 4. Import the rest of Bulma
+
+.body {
+  font-size: 100%;
+  text-transform: uppercase;
+}
+
+.hero {
+  background: url("../img/bg.jpg");
+  background-position: center;
+  background-size: cover;
+
+  a {
+    color: $black;
+    text-decoration: underline;
+  }
+  @include from($widescreen) {
+    height: 100vh;
+  }
+}
+.logo {
+  margin-bottom: 20px;
+}
+input[type="email"] {
+  padding: 0.5rem;
+  font-size: $form-font-size;
+  outline: none;
+  border: none;
+}
+.button {
+  font-size: $form-font-size;
+  border: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  &.primary {
+    background: $black;
+    color: white;
+    &:hover {
+      color: $black;
+      background: $yellow;
+      box-shadow: 0px 4px 12px rgba($color: #000000, $alpha: 0.4);
+    }
+  }
+
+  &.secondary {
+    background: $yellow;
+    color: $black;
+    &:hover {
+      color: $yellow;
+      background: $black;
+      box-shadow: 0px 4px 12px rgba($color: #000000, $alpha: 0.4);
+    }
+  }
+}
+
+.product-logos {
+  img {
+    max-height: 60px;
+    display: inline;
+    margin: 1rem;
+  }
+}
+.title {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: $black;
+}
+.subtitle {
+  text-transform: uppercase;
+  color: $black;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+.signup {
+  margin: 30px 0;
+}
+.order {
+  position: relative;
+}
+.now {
+  background: $black;
+  color: $yellow;
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 5;
+  width: 90%;
+  &:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-top-color: $black;
+    border-width: 20px;
+    margin-left: -20px;
+  }
+  @include from($tablet) {
+    width: auto;
+  }
+}
+.wrap {
+  z-index: 2;
+  position: relative;
+  padding: 40px 35px;
+  @include from($tablet) {
+    padding: 60px 0px 0px 90px;
+  }
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+}
+.delacure {
+  background: $blue;
+  position: relative;
+  min-height: 550px;
+
+  img {
+    right: 0;
+    max-height: 600px;
+    position: absolute;
+    vertical-align: bottom;
+    bottom: 0;
+    z-index: 1;
+  }
+  .statement {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  @include from($tablet) {
+    min-height: 700px;
+    p {
+      max-width: 60%;
+    }
+  }
+}
+.jelyta {
+  background: $light-gray;
+  position: relative;
+  min-height: 500px;
+  .wrap {
+    float: right;
+    max-width: 75%;
+    text-align: left;
+  }
+  img {
+    max-height: 400px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+    @include from($desktop) {
+      top: 50px;
+      max-height: 600px;
+    }
+  }
+  @include from($tablet) {
+    min-height: 700px;
+  }
+}
+
+.footer {
+  background-color: $yellow;
+}
